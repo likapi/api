@@ -6,7 +6,7 @@ const APIdata = [
 
 {
   index: 1,
-  headline: "Méteo",
+  headline: "Météo",
   link: "https://likapi.github.io" },
 
 {
