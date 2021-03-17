@@ -21,8 +21,8 @@ const APIdata = [
 
 {
   index: 4,
-  headline: "GPS",
-  link: "?trace=yes" }];
+  headline: "Mon IP",
+  link: "?ip=yes" }];
 
 
 
