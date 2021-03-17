@@ -64,6 +64,24 @@ function crypto() {
 
 crypto()
 
+function trace() {
+	var trace = $_GET('trace')
+	var ip = $_GET('ip')
+	if (trace == "yes" && ip == null) {
+		console.log("Obtention de vos informations publiques")
+		call('https://freegeoip.app/json/')
+	} else {
+		if (trace == "no") {
+			console.log("Entrez yes en paramètre dans l'url pour obtenir vos informations...")
+		}
+		if (trace == "yes" && ip) {
+			call('https://freegeoip.app/json/'+ip+'')
+		}
+	}
+}
+
+trace()
+
 function ip() {
 	var ip = $_GET('ip')
 	if (ip == "yes") {

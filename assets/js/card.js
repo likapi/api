@@ -21,11 +21,18 @@ const APIdata = [
 
 {
   index: 4,
+  headline: "GPS",
+  link: "?trace=yes" },
+
+{
+
+{
+  index: 5,
   headline: "Mon IP",
   link: "?ip=yes" },
 
 {
-  index: 5,
+  index: 6,
   headline: "Ping APIs",
   link: "?custom=https://likapi.github.io/api/status"
 }];
