@@ -101,7 +101,9 @@ function custom() {
 	if (custom != null) {
 		call(custom)
 	} else {
-		console.log("Entrez une url dans le paramètre custom...")
+		if (custom == null) {
+			console.log("Entrez une url dans le paramètre custom...")
+		}
 	}
 }
 
