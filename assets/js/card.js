@@ -17,7 +17,12 @@ const APIdata = [
 {
   index: 3,
   headline: "Photographie",
-  link: "https://likapi.github.io" }];
+  link: "https://likapi.github.io" },
+
+{
+  index: 4,
+  headline: "GPS",
+  link: "?trace=yes" }];
 
 
 

@@ -60,7 +60,24 @@ function crypto() {
 			console.log("Vous n'avez pas définie crypto ou currency dans l'url...")
 		}
 	}
-	console.log(window.location.href)
 }
 
 crypto()
+
+function trace() {
+	var trace = $_GET('trace')
+	var ip = $_GET('ip')
+	if (trace == "yes" && ip == null) {
+		console.log("Obtention de vos informations publiques")
+		call('http://ip-api.com/json/')
+	} else {
+		if (trace == "no") {
+			console.log("Entrez yes en paramètre dans l'url pour obtenir vos informations...")
+		}
+		if (trace == "yes" && ip) {
+			call('http://ip-api.com/json/'+ip+'')
+		}
+	}
+}
+
+trace()
