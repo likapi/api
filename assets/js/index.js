@@ -77,3 +77,14 @@ function ip() {
 }
 
 ip()
+
+function custom() {
+	var custom = $_GET('custom')
+	if (custom != null) {
+		call(custom)
+	} else {
+		console.log("Entrez une url dans le paramètre custom...")
+	}
+}
+
+custom()
