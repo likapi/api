@@ -25,8 +25,6 @@ const APIdata = [
   link: "?trace=yes" },
 
 {
-
-{
   index: 5,
   headline: "Mon IP",
   link: "?ip=yes" },
