@@ -64,20 +64,16 @@ function crypto() {
 
 crypto()
 
-function trace() {
-	var trace = $_GET('trace')
+function ip() {
 	var ip = $_GET('ip')
-	if (trace == "yes" && ip == null) {
-		console.log("Obtention de vos informations publiques")
-		call('https://ip-api.com/json/')
+	if (ip == "yes") {
+		console.log("Obtention de votre ip publique")
+		call('https://api.ipify.org/?format=json')
 	} else {
-		if (trace == "no") {
-			console.log("Entrez yes en paramètre dans l'url pour obtenir vos informations...")
-		}
-		if (trace == "yes" && ip) {
-			call('https://ip-api.com/json/'+ip+'')
+		if (ip == "no") {
+			console.log("Entrez yes en paramètre dans l'url pour obtenir votre ip...")
 		}
 	}
 }
 
-trace()
+ip()
