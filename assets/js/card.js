@@ -7,7 +7,7 @@ const APIdata = [
 {
   index: 1,
   headline: "Météo",
-  link: "https://likapi.github.io" },
+  link: "?meteo=yes" },
 
 {
   index: 2,

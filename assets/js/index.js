@@ -38,7 +38,7 @@ function call(api) {
   				if(response.ok) {
     				response.text().then(function(json) {
       					var data = json;
-       					document.getElementById("api").innerHTML = data
+       					document.getElementById("api").innerHTML = data.replace(/\s/g, '')
     				});
     			} else {
 				console.error("Erreur 404 avec la librairie Likapi...");
@@ -62,7 +62,26 @@ function crypto() {
 	}
 }
 
-crypto()
+function meteo() {
+	var meteo = $_GET('meteo')
+	var lon = $_GET('lon')
+	var lat = $_GET('lat')
+	if (meteo == "yes" && lon != null && lat != null) {
+		call('http://www.7timer.info/bin/api.pl?lon='+lon+'&lat='+lat+'&product=astro&output=json')
+	} else {
+		if (meteo == "no") {
+			console.log("Entrez yes en paramètre dans l'url pour obtenir vos informations...")
+		}
+		if (meteo == "yes" && lon == null || lat == null) {
+			const location = async () => {
+  				const response = await fetch('https://freegeoip.app/json/');
+  				const location = await response.json();
+  				call('http://www.7timer.info/bin/api.pl?lon='+location.longitude+'&lat='+location.latitude+'&product=astro&output=json')
+			}
+			location()
+		}
+	}
+}
 
 function trace() {
 	var trace = $_GET('trace')
@@ -80,8 +99,6 @@ function trace() {
 	}
 }
 
-trace()
-
 function ip() {
 	var ip = $_GET('ip')
 	if (ip == "yes") {
@@ -94,10 +111,7 @@ function ip() {
 	}
 }
 
-ip()
-
 function custom() {
-	var custom = $_GET('custom')
 	if (custom != null) {
 		call(custom)
 	} else {
@@ -107,4 +121,18 @@ function custom() {
 	}
 }
 
-custom()
+if ($_GET('service')) {
+	crypto()
+}
+if ($_GET('meteo')) {
+	meteo()
+}
+if ($_GET('trace')) {
+	trace()
+}
+if ($_GET('ip')) {
+	ip()
+}
+if ($_GET('custom')) {
+	custom()
+}
