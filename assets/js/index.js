@@ -38,7 +38,9 @@ function call(api) {
   				if(response.ok) {
     				response.text().then(function(json) {
       					var data = json;
-       					document.getElementById("api").innerHTML = data.replace(/\s/g, '')
+      					var data = data.replace(/\s/g, '')
+      					var data = data.replace(/[\n]/gi, "" )
+       					document.getElementById("api").innerHTML = data
     				});
     			} else {
 				console.error("Erreur 404 avec la librairie Likapi...");
