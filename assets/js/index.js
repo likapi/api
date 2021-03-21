@@ -114,6 +114,7 @@ function ip() {
 }
 
 function custom() {
+	var custom = $_GET('custom')
 	if (custom != null) {
 		call(custom)
 	} else {

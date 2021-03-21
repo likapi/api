@@ -32,7 +32,7 @@ const APIdata = [
 {
   index: 6,
   headline: "Ping APIs",
-  link: "?custom=https://likapi.github.io/api/status.json"
+  link: "?custom=https://likapi.github.io/api/status"
 }];
 
 
